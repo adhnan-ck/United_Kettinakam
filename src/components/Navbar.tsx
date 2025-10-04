@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-
 import logo from "../images/UkLogo.png";
 
 const Navbar = () => {
@@ -12,15 +11,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 group">
-
-            {/* <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-md group-hover:shadow-lg transition-all"> */}
-      <img
-  src={logo}
-  alt="Logo"
-  className="w-14 h-14 object-contain"
-/>
-            {/* </div> */}
-            {/* <span className="text-xl font-bold text-foreground">UK</span> */}
+            <img src={logo} alt="Logo" className="w-14 h-14 object-contain" />
           </Link>
           
           <div className="flex items-center gap-1 sm:gap-2">
@@ -34,6 +25,19 @@ const Navbar = () => {
             >
               Home
             </Link>
+
+           {/* New link to RequestBlood page */}
+            <Link
+              to="/RequestBlood"
+              className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                isActive("/RequestBlood")
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-foreground hover:bg-secondary"
+              }`}
+            >
+              Request
+            </Link>
+
             <Link
               to="/register"
               className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-all ${
@@ -54,6 +58,7 @@ const Navbar = () => {
             >
               Donors
             </Link>
+           
           </div>
         </div>
       </div>

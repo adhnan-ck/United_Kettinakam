@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Heart, Users, MapPin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ShimmerButton from "./ui/shimmer-button";
 
 const Hero = () => {
   return (
@@ -59,6 +60,13 @@ const Hero = () => {
               <p className="text-sm text-muted-foreground">{item.desc}</p>
             </div>
           ))}
+
+          <div className="col-span-full flex flex-col items-center mt-4">
+  <p className="text-lg font-bold text-black mb-2">Urgent Blood Needed? Click Below to Request</p>
+  <Link to="/RequestBlood">
+    <ShimmerButton />
+  </Link>
+</div>
         </div>
       </div>
 
